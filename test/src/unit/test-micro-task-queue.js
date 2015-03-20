@@ -1,16 +1,20 @@
 "use strict";
 var MicroTaskQueue = MicroTaskQueue;
+var chai = chai, expect = expect;
 
-if (!MicroTaskQueue && require)
-  MicroTaskQueue = require("../../../out/micro-task-queue");
+if (!MicroTaskQueue && require) {
+	chai = require("chai");
+	expect = chai.expect;
+	MicroTaskQueue = require("../../../out/micro-task-queue");
+}
 
 describe("micro-task-queue", function() {
 
   it("ctor", function() {
     var queue = new MicroTaskQueue();
-    expect(queue).toBeDefined();
-    expect(queue.promise).toBeDefined();
-    expect(queue.taskCount).toBe(0);
+    expect(queue).to.be.defined;
+    expect(queue.promise).to.defined;
+    expect(queue.taskCount).to.equal(0);
   });
 
   it("can run a single task", function(done) {
@@ -23,7 +27,7 @@ describe("micro-task-queue", function() {
 
     // run a macro task
     setTimeout(function() {
-      expect(taskWasCalled).toBe(true);
+      expect(taskWasCalled).to.equal(true);
       done();
     });
   });
@@ -46,7 +50,7 @@ describe("micro-task-queue", function() {
 
     // run a macro task
     setTimeout(function() {
-      expect(tasksCalled).toBe(3);
+      expect(tasksCalled).to.equal(3);
       done();
     });
   });
@@ -67,11 +71,11 @@ describe("micro-task-queue", function() {
       }
     ]);
 
-    expect(queue.taskCount).toBe(3);
+    expect(queue.taskCount).to.equal(3);
 
     // run a macro task
     setTimeout(function() {
-      expect(queue.taskCount).toBe(0);
+      expect(queue.taskCount).to.equal(0);
       done();
     });
   });
@@ -90,8 +94,8 @@ describe("micro-task-queue", function() {
 
     // run a macro task
     setTimeout(function() {
-      expect(taskWasCalled).toBe(true);
-      expect(doneWasCalled).toBe(true);
+      expect(taskWasCalled).to.equal(true);
+      expect(doneWasCalled).to.equal(true);
       done();
     });
   });
@@ -104,7 +108,7 @@ describe("micro-task-queue", function() {
 
     // run a macro task
     setTimeout(function() {
-      expect(doneWasCalled).toBe(false);
+      expect(doneWasCalled).to.equal(false);
       done();
     });
   });
@@ -112,7 +116,7 @@ describe("micro-task-queue", function() {
   it("completed callback passes an error when an error has occurred in a task", function(done) {
     var queue = new MicroTaskQueue(null, function(result) {
       // caught error
-      expect(result instanceof ReferenceError).toBe(true);
+      expect(result instanceof ReferenceError).to.equal(true);
       done();
     });
 
@@ -131,7 +135,7 @@ describe("micro-task-queue", function() {
     }
 
     queue.completed(function(data){
-      expect(data).toBe(100);
+      expect(data).to.equal(100);
       done();
     });
 

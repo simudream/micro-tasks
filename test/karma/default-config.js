@@ -5,7 +5,7 @@ module.exports = function(config) {
   return config.set({
     basePath: '../',
     port: 9876,
-    frameworks: ['jasmine'],
+    frameworks: ['mocha', 'chai'],
     reporters: ['dots'],
     log: 'karma/karma.log',
     colors: true,
@@ -14,7 +14,8 @@ module.exports = function(config) {
       'karma-ie-launcher',
       'karma-firefox-launcher',
       'karma-script-launcher',
-      'karma-jasmine',
+	  'karma-mocha',
+      'karma-chai',
       'karma-coverage'
     ],
     //preprocessors: {

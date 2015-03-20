@@ -32,7 +32,7 @@ function wrapMicroTask(queue, taskHandler) {
  * @constructor
  * @param data Custom data that will be passed to the first task
  * @param {Function} completedHandler
- *      call when all tasks have been completed
+ *      called when all tasks have been completed
  */
 function MicroTaskQueue(data, completedHandler) {
   this.taskCount = 0;
