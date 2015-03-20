@@ -86,6 +86,75 @@ Simple task utility that runs tasks as micro tasks via promises.
   });
 ```
 
+####Monitoring single tasks
+```js
+// create a MonitoredTaskQueue, this example passes in some optional data
+var queue = new MonitoredTaskQueue(0);
+
+// the following functions are added in no specific order
+
+// optional beforeEach task handler
+queue.beforeEach(function (data) {
+  return data + 1;
+})
+// optional afterEach task handler
+.afterEach(function (data) {
+  return data + 1;
+})
+// adds a task with a taskDone callback handler
+.addTask(function (data) {
+  return data + 1;
+}, function taskDone(data) {
+  return data + 1;
+})
+// optional done handler called when all tasks are complete
+.done(function (result) {
+  if (result instanceof Error)
+    console.error(result)
+  else
+    console.log("complete " + result);
+});
+```
+
+####Monitoring task batches
+```js
+  // create a MonitoredTaskQueue, this example passes in some optional data
+  var queue = new MonitoredTaskQueue(0);
+
+  // the following functions are added in no specific order
+
+  // optional beforeEach task handler
+  queue.beforeEach(function (data) {
+    return data + 1;
+  })
+  // optional afterEach task handler
+  .afterEach(function (data) {
+    return data + 1;
+  })
+  // adds a batch of tasks with a taskBatchDone callback handler
+  // which is called once the batch of tasks are complete
+  .addTasks([
+    function (data) {
+      return data + 1;
+    },
+    function (data) {
+      return data + 1;
+    },
+    function (data) {
+      return data + 1;
+    }
+  ], function taskBatchDone(data) {
+    return data + 1;
+  })
+  // optional done handler called when all tasks are complete
+  .done(function (result) {
+    if (result instanceof Error)
+      console.error(result)
+    else
+      console.log("complete " + result);
+  });
+```
+
 <!-- BACKERS/ -->
 
 ## Backers
