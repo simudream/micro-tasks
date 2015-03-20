@@ -49,7 +49,7 @@ Simple task utility that runs tasks as micro tasks via promises.
 ```js
   var data = 1;
   var queue = new MicroTaskQueue(data);
-  queue.addTask([
+  queue.addTasks([
     function(data) {
       console.log("task " + data);
       return data + 1;
@@ -62,8 +62,11 @@ Simple task utility that runs tasks as micro tasks via promises.
       console.log("task " + data);
       return data + 1;
     }
-  ]).completed(function(data) {
-    console.log("complete " + data);
+  ]).completed(function(result) {
+    if (result instanceof Error)
+      console.error(result)
+    else
+      console.log("complete " + result);
   });
 ```
 
