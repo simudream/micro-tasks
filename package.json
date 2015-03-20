@@ -1,10 +1,11 @@
 {
-  "version": "0.0.0",
-  "scripts": {
-    "install-deps": "grunt shell:projectz && bower install"
-  },
   "name": "micro-task-queue",
   "description": "Simple task utility that runs tasks as micro tasks via promises.",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=0.12",
+    "npm": ">=1.4"
+  },
   "keywords": [
     "micro task",
     " tasks",
@@ -19,6 +20,9 @@
   ],
   "bugs": {
     "url": "https://github.com/pflannery/micro-task-queue/issues"
+  },
+  "scripts": {
+    "install-deps": "grunt shell:projectz && bower install"
   },
   "dependencies": {},
   "devDependencies": {
