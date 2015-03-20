@@ -12,12 +12,12 @@ function wrapMicroTask(queue, taskHandler) {
       handlerThrew = 0
     } finally {
       if (handlerThrew == 1)
-        queue.promise.catch(queue.completedHandler);
+        queue.promise.catch(queue.doneHandler);
     }
 
     queue.taskCount--;
-    if (queue.taskCount === 0 && queue.completedHandler) {
-      queue.promise.then(queue.completedHandler);
+    if (queue.taskCount === 0 && queue.doneHandler) {
+      queue.promise.then(queue.doneHandler);
     }
 
     return result;
@@ -31,13 +31,13 @@ function wrapMicroTask(queue, taskHandler) {
  *
  * @constructor
  * @param data Custom data that will be passed to the first task
- * @param {Function} completedHandler
+ * @param {Function} doneHandler
  *      called when all tasks have been completed
  */
-function MicroTaskQueue(data, completedHandler) {
+function MicroTaskQueue(data, doneHandler) {
   this.taskCount = 0;
-  if (completedHandler)
-    this.completed(completedHandler);
+  if (doneHandler)
+    this.done(doneHandler);
   this.promise = Promise.resolve(data);
 }
 
@@ -115,14 +115,14 @@ MicroTaskQueue.prototype = {
   },
 
   /**
-   * An event that is called when all tasks have been completed
+   * An event that is called when all tasks have been done
    *
-   * @method completed
-   * @param {Function} completedHandler
+   * @method done
+   * @param {Function} doneHandler
    *    @param result An Error if an error occurred during a task otherwise its any data that was passed from the last task ran
    */
-  completed: function(completedHandler) {
-    this.completedHandler = completedHandler;
+  done: function(doneHandler) {
+    this.doneHandler = doneHandler;
   }
 
 };

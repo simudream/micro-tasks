@@ -46,6 +46,22 @@ Simple task utility that runs tasks as micro tasks via promises.
 
 ## Usage
 
+####Single tasks
+```js
+  var data = 1;
+  var queue = new MicroTaskQueue(data);
+  queue.addTask(function(data) {
+      console.log("task " + data);
+      return data + 1;
+  }).done(function(result) {
+    if (result instanceof Error)
+      console.error(result)
+    else
+      console.log("complete " + result);
+  });
+```
+
+####Multiple tasks
 ```js
   var data = 1;
   var queue = new MicroTaskQueue(data);
@@ -62,7 +78,7 @@ Simple task utility that runs tasks as micro tasks via promises.
       console.log("task " + data);
       return data + 1;
     }
-  ]).completed(function(result) {
+  ]).done(function(result) {
     if (result instanceof Error)
       console.error(result)
     else
