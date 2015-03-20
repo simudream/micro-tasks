@@ -2,7 +2,7 @@
   "name": "micro-task-queue",
   "version": "0.0.0",
   "license": "GNU GPL v3",
-  "description": "micro-task-queue",
+  "description": "Simple task utility that runs tasks as micro tasks via promises.",
   "keywords": [
     "micro task",
     " tasks",

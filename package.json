@@ -4,7 +4,7 @@
     "install-deps": "grunt shell:projectz && bower install"
   },
   "name": "micro-task-queue",
-  "description": "micro-task-queue",
+  "description": "Simple task utility that runs tasks as micro tasks via promises.",
   "keywords": [
     "micro task",
     " tasks",
@@ -14,7 +14,9 @@
   "maintainers": [
     "pflannery (https://github.com/pflannery)"
   ],
-  "contributors": [],
+  "contributors": [
+    "pflannery (https://github.com/pflannery)"
+  ],
   "bugs": {
     "url": "https://github.com/pflannery/micro-task-queue/issues"
   },

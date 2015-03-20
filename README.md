@@ -20,7 +20,7 @@
 
 <!-- DESCRIPTION/ -->
 
-micro-task-queue
+Simple task utility that runs tasks as micro tasks via promises.
 
 <!-- /DESCRIPTION -->
 
@@ -36,7 +36,7 @@ micro-task-queue
 ### [Browserify](http://browserify.org/)
 - Use: `require('micro-task-queue')`
 - Install: `npm install --save micro-task-queue`
-- CDN URL: `//wzrd.in/bundle/micro-task-queue@undefined`
+- CDN URL: `//wzrd.in/bundle/micro-task-queue@0.0.0`
 
 ### [Ender](http://enderjs.com)
 - Use: `require('micro-task-queue')`
@@ -94,8 +94,11 @@ No sponsors yet! Will you be the first?
 
 ### Contributors
 
-No contributors yet! Will you be the first?
-[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pflannery/micro-task-queue/blob/master/CONTRIBUTING.md#files)
+These amazing people have contributed code to this project:
+
+- [pflannery](https://github.com/pflannery) — [view contributions](https://github.com/pflannery/micro-task-queue/commits?author=pflannery)
+
+[Become a contributor!](https://github.com/pflannery/micro-task-queue/blob/master/CONTRIBUTING.md#files)
 
 <!-- /BACKERS -->
 
