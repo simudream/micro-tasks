@@ -56,8 +56,8 @@ Simple task utility that runs tasks as micro tasks via promises.
 
   // adds a single micro task
   queue.addTask(function(data) {
-      console.log("task " + data);
-      return data + 1;
+    console.log("task " + data);
+    return data + 1;
   })
   // optional done handler called when all tasks are complete
   .done(function(result) {
@@ -206,4 +206,4 @@ Copyright &copy; 2015+ pflannery (https://github.com/pflannery)
 <!-- /LICENSE -->
 
 
-[![Analytics](https://ga-beacon.appspot.com/UA-47157500-1/querifyjs/readme)](https://github.com/pflannery/querifyjs)
+[![Analytics](https://ga-beacon.appspot.com/UA-47157500-1/micro-task-queue/readme)](https://github.com/pflannery/micro-task-queue)
