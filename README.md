@@ -46,14 +46,21 @@ Simple task utility that runs tasks as micro tasks via promises.
 
 ## Usage
 
-####Single tasks
+####Single micro tasks
 ```js
-  var data = 1;
-  var queue = new MicroTaskQueue(data);
+  // creates a MicroTaskQueue, then passes in some optional data
+  var data = 0;
+    queue = new MicroTaskQueue(data);
+
+  // the following functions are added in no specific order
+
+  // adds a single micro task
   queue.addTask(function(data) {
       console.log("task " + data);
       return data + 1;
-  }).done(function(result) {
+  })
+  // optional done handler called when all tasks are complete
+  .done(function(result) {
     if (result instanceof Error)
       console.error(result)
     else
@@ -61,10 +68,13 @@ Simple task utility that runs tasks as micro tasks via promises.
   });
 ```
 
-####Multiple tasks
+####Multiple micro tasks
 ```js
-  var data = 1;
-  var queue = new MicroTaskQueue(data);
+  // creates a MicroTaskQueue, then passes in some optional data
+  var data = 1,
+    queue = new MicroTaskQueue(data);
+
+  // adds a batch of micro tasks
   queue.addTasks([
     function(data) {
       console.log("task " + data);
@@ -78,7 +88,9 @@ Simple task utility that runs tasks as micro tasks via promises.
       console.log("task " + data);
       return data + 1;
     }
-  ]).done(function(result) {
+  ])
+  // optional done handler called when all tasks are complete
+  .done(function(result) {
     if (result instanceof Error)
       console.error(result)
     else
@@ -89,7 +101,8 @@ Simple task utility that runs tasks as micro tasks via promises.
 ####Monitoring single tasks
 ```js
 // create a MonitoredTaskQueue, this example passes in some optional data
-var queue = new MonitoredTaskQueue(0);
+var data = 0;
+var queue = new MonitoredTaskQueue(data);
 
 // the following functions are added in no specific order
 
