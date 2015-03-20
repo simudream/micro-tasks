@@ -1,0 +1,13 @@
+{
+  "name": "micro-task-queue",
+  "version": "0.0.0",
+  "license": "GNU GPL v3",
+  "description": "micro-task-queue",
+  "keywords": [
+    "micro task",
+    " tasks",
+    " promise"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
