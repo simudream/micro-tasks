@@ -33,15 +33,6 @@ Simple task utility that runs tasks as micro tasks via promises.
 - Use: `require('micro-task-queue')`
 - Install: `npm install --save micro-task-queue`
 
-### [Browserify](http://browserify.org/)
-- Use: `require('micro-task-queue')`
-- Install: `npm install --save micro-task-queue`
-- CDN URL: `//wzrd.in/bundle/micro-task-queue@0.0.0`
-
-### [Ender](http://enderjs.com)
-- Use: `require('micro-task-queue')`
-- Install: `ender add micro-task-queue`
-
 ### [Bower](http://bower.io/)
 - Use: `require('micro-task-queue')`
 - Install: `bower install micro-task-queue`

@@ -60,7 +60,7 @@ bugs:
 
 # Whether the project can run on the client-side in web browsers
 # If the component or bower package information is set, then this becomes true automatically
-browsers: true
+browsers: false
 
 # Project's badges for use in the readme files
 badges:
