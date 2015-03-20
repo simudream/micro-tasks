@@ -25,7 +25,7 @@ function wrapMicroTask(queue, taskHandler) {
 }
 
 /**
- * Class for creating synchronous Query instances.
+ * Class for creating tasks that are run as micro tasks using Promises.
  *
  * @class MicroTaskQueue
  *
