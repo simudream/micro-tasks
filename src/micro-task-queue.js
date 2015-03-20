@@ -79,7 +79,7 @@ MicroTaskQueue.prototype = {
    * @method addTask
    * @async
    *
-   * @param {Array} taskHandlers An array of task functions to be called
+   * @param {Array} taskBatchHandlers An array of task functions to be called
    *     Note: data returned per function will be passed to the next task
    * @return current {MicroTaskQueue} instance
    *
@@ -105,10 +105,10 @@ MicroTaskQueue.prototype = {
    *  ]);
    * ```
    */
-  addTasks: function(taskHandlers) {
-    var index = 0, count = taskHandlers.length;
+  addTasks: function(taskBatchHandlers) {
+    var index = 0, count = taskBatchHandlers.length;
     for (; index < count; index++)
-      this.promise = this.promise.then(wrapMicroTask(this, taskHandlers[index]));
+      this.promise = this.promise.then(wrapMicroTask(this, taskBatchHandlers[index]));
 
     this.taskCount += count;
     return this;
@@ -126,14 +126,3 @@ MicroTaskQueue.prototype = {
   }
 
 };
-
-/* export the library */
-if (typeof module !== typeof undefined && typeof module.exports !== typeof undefined) {
-  /* node */
-  module.exports = MicroTaskQueue;
-} else {
-  var indirectEval = (0, eval),
-    globalThis = indirectEval('this');
-
-  globalThis.MicroTaskQueue = MicroTaskQueue;
-}

@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = function (config) {
 
   "use strict";
 
@@ -14,7 +14,7 @@ module.exports = function(config) {
       'karma-ie-launcher',
       'karma-firefox-launcher',
       'karma-script-launcher',
-	  'karma-mocha',
+      'karma-mocha',
       'karma-chai',
       'karma-coverage'
     ],

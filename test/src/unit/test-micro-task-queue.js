@@ -5,7 +5,7 @@ var chai = chai, expect = expect;
 if (!MicroTaskQueue && require) {
 	chai = require("chai");
 	expect = chai.expect;
-	MicroTaskQueue = require("../../../out/micro-task-queue");
+	MicroTaskQueue = require("../../../out/micro-task-queue").MicroTaskQueue;
 }
 
 describe("micro-task-queue", function() {
@@ -80,7 +80,7 @@ describe("micro-task-queue", function() {
     });
   });
 
-  it("done callback is called when tasks are present", function(done) {
+  it("done handler is called when tasks are present", function(done) {
     var doneWasCalled = false,
       taskWasCalled = false;
 
@@ -100,7 +100,7 @@ describe("micro-task-queue", function() {
     });
   });
 
-  it("done callback is not called when tasks are not present", function(done) {
+  it("done handler is not called when tasks are not present", function(done) {
     var doneWasCalled = false;
     var queue = new MicroTaskQueue(null, function() {
       doneWasCalled = true;
@@ -113,7 +113,7 @@ describe("micro-task-queue", function() {
     });
   });
 
-  it("done callback passes an error when an error has occurred in a task", function(done) {
+  it("done handler passes an error when an error has occurred in a task", function(done) {
     var queue = new MicroTaskQueue(null, function(result) {
       // caught error
       expect(result instanceof ReferenceError).to.equal(true);
@@ -125,7 +125,7 @@ describe("micro-task-queue", function() {
     });
   });
 
-  it("done callback receives accumulated data", function(done) {
+  it("done handler receives accumulated data", function(done) {
     var queue = new MicroTaskQueue(0);
 
     for (var i = 0; i < 100; i++) {

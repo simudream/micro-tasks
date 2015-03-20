@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         compress: false,
         indentLevel: 2
       },
-      src: pathUtil.join("<%=env.SRC_DIR%>", "<%=env.OUT_BUNDLE_FILE%>"),
+      src: "<%=pkg.bundle%>",
       dest: pathUtil.join("<%=env.OUT_DIR%>", "<%=env.OUT_BUNDLE_FILE%>")
     },
     compress: {
