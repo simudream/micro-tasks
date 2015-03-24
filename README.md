@@ -42,7 +42,7 @@ Simple task utility that runs tasks as micro tasks via promises.
 
 ## Documentation
 
-[Library API](http://pflannery.github.io/micro-query-tasks/)
+[Library API](http://pflannery.github.io/micro-task-queue/)
 
 ## Usage
 
