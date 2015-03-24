@@ -1,11 +1,13 @@
 "use strict";
-var MicroTaskQueue = MicroTaskQueue;
+var MicroTaskQueue = MicroTaskQueue,
+  MicroTaskBreak = MicroTaskBreak;
 var chai = chai, expect = expect;
 
 if (!MicroTaskQueue && require) {
 	chai = require("chai");
 	expect = chai.expect;
-	MicroTaskQueue = require("../../../out/micro-task-queue").MicroTaskQueue;
+  MicroTaskBreak = require("../../../out/micro-task-queue").MicroTaskBreak;
+  MicroTaskQueue = require("../../../out/micro-task-queue").MicroTaskQueue;
 }
 
 describe("micro-task-queue", function() {
@@ -57,6 +59,39 @@ describe("micro-task-queue", function() {
     // run a macro task
     setTimeout(function() {
       expect(tasksCalled).to.equal(3);
+      done();
+    });
+  });
+
+  it("can break during task execution", function(done) {
+    var queue = new MicroTaskQueue(),
+      tasksCalled = 0,
+      doneCalled = false;
+
+    queue.addTasks([
+      function() {
+        tasksCalled++;
+      },
+      function() {
+        tasksCalled++;
+        queue.break("test reason");
+      },
+      function() {
+        tasksCalled++
+      }
+    ]).done(function(breakExp){
+      expect(breakExp instanceof MicroTaskBreak).to.be.equal(true);
+      expect(breakExp.reason).to.be.equal("test reason");
+      doneCalled = true;
+    });
+
+    // run the tasks
+    queue.run();
+
+    // run a macro task
+    setTimeout(function() {
+      expect(tasksCalled).to.equal(2);
+      expect(doneCalled).to.equal(true);
       done();
     });
   });

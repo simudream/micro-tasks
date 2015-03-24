@@ -11,6 +11,7 @@ if (typeof module !== typeof undefined && typeof module.exports !== typeof undef
   var indirectEval = (0, eval),
     globalThis = indirectEval('this');
 
+  globalThis.MicroTaskBreak = MicroTaskBreak;
   globalThis.MicroTaskQueue = MicroTaskQueue;
   globalThis.MonitoredTaskQueue = MonitoredTaskQueue;
 }

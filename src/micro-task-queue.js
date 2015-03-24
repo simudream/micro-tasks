@@ -133,6 +133,10 @@ MicroTaskQueue.prototype = {
    */
   done: function(doneHandler) {
     this.doneHandler = doneHandler;
+  },
+
+  break: function(reason) {
+    throw new MicroTaskBreak(reason);
   }
 
 };

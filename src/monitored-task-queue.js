@@ -11,8 +11,8 @@
  * @param {Function} doneHandler
  *      called when all tasks have been completed
  */
-function MonitoredTaskQueue(data, doneHandler) {
-  MicroTaskQueue.call(this, data, doneHandler);
+function MonitoredTaskQueue(doneHandler) {
+  MicroTaskQueue.call(this, doneHandler);
 }
 
 MonitoredTaskQueue.prototype = {
