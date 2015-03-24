@@ -66,6 +66,8 @@ Simple task utility that runs tasks as micro tasks via promises.
     else
       console.log("complete " + result);
   });
+
+  queue.run(data);
 ```
 
 ####Multiple micro tasks
