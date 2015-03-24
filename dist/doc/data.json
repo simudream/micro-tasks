@@ -132,17 +132,17 @@
                 "type": "MicroTaskQueue"
             },
             "example": [
-                "\n\n```javascript\n var data = 1;\n var queue = new MicroTaskQueue(data);\n\n queue.addTask(function(data){\n   console.log(\"task \" + data);\n   return data + 1;\n }).addTask(function(data){\n   console.log(\"task \" + data);\n   return data + 1;\n });\n```"
+                "\n\n```javascript\n var data = 1;\n var queue = new MicroTaskQueue();\n\n queue.addTask(function(data){\n   console.log(\"task \" + data);\n   return data + 1;\n }).addTask(function(data){\n   console.log(\"task \" + data);\n   return data + 1;\n });\n\n queue.run(data);\n```"
             ],
             "class": "MicroTaskQueue",
             "module": "MicroTasking"
         },
         {
             "file": "src\\micro-task-queue.js",
-            "line": 86,
+            "line": 88,
             "description": "Adds an array of task functions to the queue which wi;; be called during the next micro task cycle",
             "itemtype": "method",
-            "name": "addTask",
+            "name": "addTasks",
             "async": 1,
             "params": [
                 {
@@ -156,14 +156,14 @@
                 "type": "MicroTaskQueue"
             },
             "example": [
-                "\n\n```javascript\n var data = 1;\n var queue = new MicroTaskQueue(data);\n\n queue.addTask([\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   },\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   },\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   }\n ]);\n```"
+                "\n\n```javascript\n var data = 1;\n var queue = new MicroTaskQueue();\n\n queue.addTask([\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   },\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   },\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   }\n ]);\n\n queue.run(data);\n```"
             ],
             "class": "MicroTaskQueue",
             "module": "MicroTasking"
         },
         {
             "file": "src\\micro-task-queue.js",
-            "line": 127,
+            "line": 131,
             "description": "An event that is called when all tasks have been done",
             "itemtype": "method",
             "name": "done",
@@ -179,6 +179,61 @@
                 }
             ],
             "class": "MicroTaskQueue",
+            "module": "MicroTasking"
+        },
+        {
+            "file": "src\\micro-task-queue.js",
+            "line": 142,
+            "itemtype": "method",
+            "name": "break",
+            "params": [
+                {
+                    "name": "reason",
+                    "description": "",
+                    "type": "Variable"
+                }
+            ],
+            "class": "MicroTaskQueue",
+            "module": "MicroTasking"
+        },
+        {
+            "file": "src\\monitored-task-queue.js",
+            "line": 50,
+            "itemtype": "method",
+            "name": "beforeEach",
+            "async": 1,
+            "params": [
+                {
+                    "name": "beforeEachHandler",
+                    "description": "The method to be called before running a task",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "current  instance",
+                "type": "MicroTaskQueue"
+            },
+            "class": "MonitoredTaskQueue",
+            "module": "MicroTasking"
+        },
+        {
+            "file": "src\\monitored-task-queue.js",
+            "line": 62,
+            "itemtype": "method",
+            "name": "afterEach",
+            "async": 1,
+            "params": [
+                {
+                    "name": "afterEachHandler",
+                    "description": "The method to be called before running a task",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "current  instance",
+                "type": "MicroTaskQueue"
+            },
+            "class": "MonitoredTaskQueue",
             "module": "MicroTasking"
         }
     ],
