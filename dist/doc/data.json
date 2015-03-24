@@ -1,6 +1,6 @@
 {
     "project": {
-        "name": "micro-task-queue",
+        "name": "micro-tasks",
         "description": "Simple task utility that runs tasks as micro tasks via promises.",
         "version": "0.0.0",
         "url": ""
@@ -9,7 +9,7 @@
         "src\\micro-task-queue.js": {
             "name": "src\\micro-task-queue.js",
             "modules": {
-                "MicroTasking": 1
+                "MicroTasks": 1
             },
             "classes": {
                 "MicroTaskQueue": 1
@@ -28,8 +28,8 @@
         }
     },
     "modules": {
-        "MicroTasking": {
-            "name": "MicroTasking",
+        "MicroTasks": {
+            "name": "MicroTasks",
             "submodules": {},
             "classes": {
                 "MicroTaskQueue": 1,
@@ -51,7 +51,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "MicroTasking",
+            "module": "MicroTasks",
             "namespace": "",
             "file": "src\\micro-task-queue.js",
             "line": 27,
@@ -77,7 +77,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "MicroTasking",
+            "module": "MicroTasks",
             "namespace": "",
             "file": "src\\monitored-task-queue.js",
             "line": 3,
@@ -111,7 +111,7 @@
                 }
             ],
             "class": "MicroTaskQueue",
-            "module": "MicroTasking"
+            "module": "MicroTasks"
         },
         {
             "file": "src\\micro-task-queue.js",
@@ -135,7 +135,7 @@
                 "\n\n```javascript\n var data = 1;\n var queue = new MicroTaskQueue();\n\n queue.addTask(function(data){\n   console.log(\"task \" + data);\n   return data + 1;\n }).addTask(function(data){\n   console.log(\"task \" + data);\n   return data + 1;\n });\n\n queue.run(data);\n```"
             ],
             "class": "MicroTaskQueue",
-            "module": "MicroTasking"
+            "module": "MicroTasks"
         },
         {
             "file": "src\\micro-task-queue.js",
@@ -159,7 +159,7 @@
                 "\n\n```javascript\n var data = 1;\n var queue = new MicroTaskQueue();\n\n queue.addTask([\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   },\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   },\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   }\n ]);\n\n queue.run(data);\n```"
             ],
             "class": "MicroTaskQueue",
-            "module": "MicroTasking"
+            "module": "MicroTasks"
         },
         {
             "file": "src\\micro-task-queue.js",
@@ -179,7 +179,7 @@
                 }
             ],
             "class": "MicroTaskQueue",
-            "module": "MicroTasking"
+            "module": "MicroTasks"
         },
         {
             "file": "src\\micro-task-queue.js",
@@ -194,7 +194,7 @@
                 }
             ],
             "class": "MicroTaskQueue",
-            "module": "MicroTasking"
+            "module": "MicroTasks"
         },
         {
             "file": "src\\monitored-task-queue.js",
@@ -214,7 +214,7 @@
                 "type": "MicroTaskQueue"
             },
             "class": "MonitoredTaskQueue",
-            "module": "MicroTasking"
+            "module": "MicroTasks"
         },
         {
             "file": "src\\monitored-task-queue.js",
@@ -234,7 +234,7 @@
                 "type": "MicroTaskQueue"
             },
             "class": "MonitoredTaskQueue",
-            "module": "MicroTasking"
+            "module": "MicroTasks"
         }
     ],
     "warnings": []
