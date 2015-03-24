@@ -88,7 +88,7 @@ MicroTaskQueue.prototype = {
   /**
    * Adds an array of task functions to the queue which wi;; be called during the next micro task cycle
    *
-   * @method addTask
+   * @method addTasks
    * @async
    *
    * @param {Array} taskBatchHandlers An array of task functions to be called
@@ -139,6 +139,10 @@ MicroTaskQueue.prototype = {
     this.doneHandler = doneHandler;
   },
 
+  /**
+   * @method break
+   * @param {Variable} reason
+   */
   break: function(reason) {
     throw new MicroTaskBreak(reason);
   }

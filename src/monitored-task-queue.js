@@ -47,11 +47,25 @@ MonitoredTaskQueue.prototype = {
     return this;
   },
 
+  /**
+   * @method beforeEach
+   * @async
+   *
+   * @param {Function} beforeEachHandler The method to be called before running a task
+   * @return current {MicroTaskQueue} instance
+   */
   beforeEach: function (beforeEachHandler) {
     this.beforeEachHandler = beforeEachHandler;
     return this;
   },
 
+  /**
+   * @method afterEach
+   * @async
+   *
+   * @param {Function} afterEachHandler The method to be called before running a task
+   * @return current {MicroTaskQueue} instance
+   */
   afterEach: function (afterEachHandler) {
     this.afterEachHandler = afterEachHandler;
     return this;
