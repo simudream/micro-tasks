@@ -1,0 +1,17 @@
+<div class="module"
+     ng-repeat="module in modules"
+     id="{{module.name | idEncode}}"
+>
+
+    <div class="heading">
+        <h1 class="page-header">
+            <i class="fa fa-cube moduleItemType"></i><span ng-bind="module.name"></span>
+        </h1>
+    </div>
+
+    <div ng-if="module.description !== undefined" class="summary description markdown-body"
+         ng-bind-html="marked(module.description)"></div>
+
+    <ng-include src="'app/view/partial/doc/classes.html'"></ng-include>
+
+</div>

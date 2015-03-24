@@ -1,0 +1,186 @@
+{
+    "project": {
+        "name": "micro-task-queue",
+        "description": "Simple task utility that runs tasks as micro tasks via promises.",
+        "version": "0.0.0",
+        "url": ""
+    },
+    "files": {
+        "src\\micro-task-queue.js": {
+            "name": "src\\micro-task-queue.js",
+            "modules": {
+                "MicroTasking": 1
+            },
+            "classes": {
+                "MicroTaskQueue": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\monitored-task-queue.js": {
+            "name": "src\\monitored-task-queue.js",
+            "modules": {},
+            "classes": {
+                "MonitoredTaskQueue": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "MicroTasking": {
+            "name": "MicroTasking",
+            "submodules": {},
+            "classes": {
+                "MicroTaskQueue": 1,
+                "MonitoredTaskQueue": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src\\monitored-task-queue.js",
+            "line": 3
+        }
+    },
+    "classes": {
+        "MicroTaskQueue": {
+            "name": "MicroTaskQueue",
+            "shortname": "MicroTaskQueue",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "MicroTasking",
+            "namespace": "",
+            "file": "src\\micro-task-queue.js",
+            "line": 27,
+            "description": "Class for creating tasks that are run as micro tasks using Promises.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "data",
+                    "description": "Custom data that will be passed to the first task"
+                },
+                {
+                    "name": "doneHandler",
+                    "description": "called when all tasks have been completed",
+                    "type": "Function"
+                }
+            ]
+        },
+        "MonitoredTaskQueue": {
+            "name": "MonitoredTaskQueue",
+            "shortname": "MonitoredTaskQueue",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "MicroTasking",
+            "namespace": "",
+            "file": "src\\monitored-task-queue.js",
+            "line": 3,
+            "description": "Class that provides beforeEach, afterEach, taskDone and taskBatchDone handlers to assist\nwith scenarios like monitoring progress of micro tasks.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "data",
+                    "description": "Custom data that will be passed to the first task"
+                },
+                {
+                    "name": "doneHandler",
+                    "description": "called when all tasks have been completed",
+                    "type": "Function"
+                }
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "src\\micro-task-queue.js",
+            "line": 44,
+            "description": "Runs all queued tasks",
+            "itemtype": "method",
+            "name": "run",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "Variable"
+                }
+            ],
+            "class": "MicroTaskQueue",
+            "module": "MicroTasking"
+        },
+        {
+            "file": "src\\micro-task-queue.js",
+            "line": 55,
+            "description": "Adds a task function to the queue which will be called during the next micro task cycle",
+            "itemtype": "method",
+            "name": "addTask",
+            "async": 1,
+            "params": [
+                {
+                    "name": "taskHandler",
+                    "description": "The task to be called\n    Note: data returned in this function will be passed to the next task",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "current  instance",
+                "type": "MicroTaskQueue"
+            },
+            "example": [
+                "\n\n```javascript\n var data = 1;\n var queue = new MicroTaskQueue(data);\n\n queue.addTask(function(data){\n   console.log(\"task \" + data);\n   return data + 1;\n }).addTask(function(data){\n   console.log(\"task \" + data);\n   return data + 1;\n });\n```"
+            ],
+            "class": "MicroTaskQueue",
+            "module": "MicroTasking"
+        },
+        {
+            "file": "src\\micro-task-queue.js",
+            "line": 86,
+            "description": "Adds an array of task functions to the queue which wi;; be called during the next micro task cycle",
+            "itemtype": "method",
+            "name": "addTask",
+            "async": 1,
+            "params": [
+                {
+                    "name": "taskBatchHandlers",
+                    "description": "An array of task functions to be called\n    Note: data returned per function will be passed to the next task",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "current  instance",
+                "type": "MicroTaskQueue"
+            },
+            "example": [
+                "\n\n```javascript\n var data = 1;\n var queue = new MicroTaskQueue(data);\n\n queue.addTask([\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   },\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   },\n   function(data){\n     console.log(\"task \" + data);\n     return data + 1;\n   }\n ]);\n```"
+            ],
+            "class": "MicroTaskQueue",
+            "module": "MicroTasking"
+        },
+        {
+            "file": "src\\micro-task-queue.js",
+            "line": 127,
+            "description": "An event that is called when all tasks have been done",
+            "itemtype": "method",
+            "name": "done",
+            "params": [
+                {
+                    "name": "doneHandler",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "result",
+                    "description": "An Error if an error occurred during a task otherwise its any data that was passed from the last task ran"
+                }
+            ],
+            "class": "MicroTaskQueue",
+            "module": "MicroTasking"
+        }
+    ],
+    "warnings": []
+}

@@ -1,0 +1,28 @@
+.tree {
+
+  .tree-list, .tl {
+
+    .tree-item-info, .ti-info {
+
+      color: $tree-info-color;
+
+      &:before {
+        background-color: $tree-info-bg;
+        border-color: $tree-info-border;
+      }
+
+      // highlights single item only
+      &:hover {
+
+        &:before {
+          background-color: darken($tree-info-bg, 10%);
+          border-color: darken($tree-info-border, 10%);
+        }
+
+      }
+
+    }
+
+  }
+
+}

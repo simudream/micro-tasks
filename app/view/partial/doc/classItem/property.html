@@ -1,0 +1,9 @@
+<div>
+    <ul>
+        <li>
+            <a href="#" ng-bind="classItem.type"></a> <span ng-bind="classItem.name"></span>
+            <ng-include ng-if="classItem.subprops !== undefined" src="'app/view/partial/doc/classItem/params.html'"
+                        ng-init="classItem = {params: classItem.subprops}"></ng-include>
+        </li>
+    </ul>
+</div>

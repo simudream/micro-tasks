@@ -1,0 +1,28 @@
+.tree {
+
+  .tree-list, .tl {
+
+    .tree-item-primary, .ti-primary {
+
+      color: $tree-primary-color;
+
+      &:before {
+        background-color: $tree-primary-bg;
+        border-color: $tree-primary-border;
+      }
+
+      // highlights single item only
+      &:hover {
+
+        &:before {
+          background-color: darken($tree-primary-bg, 10%);
+          border-color: darken($tree-primary-border, 10%);
+        }
+
+      }
+
+    }
+
+  }
+
+}

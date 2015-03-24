@@ -1,0 +1,21 @@
+<div class="params" ng-if="classItem.params !== undefined">
+    <div ng-if="classItem.itemtype==='method'">
+        <strong class="text-muted">Parameters</strong>
+        <br/>
+    </div>
+
+    <br/>
+
+    <ul>
+        <li ng-repeat="param in classItem.params">
+            <div>
+                <a href="#" ng-bind="param.type"></a> <code class="param-name" ng-bind="param.name"></code>
+            </div>
+            <div ng-if="param.description !== undefined" class="param-description">
+                <p class="description markdown-body" ng-bind-html="marked(param.description)"></p>
+            </div>
+            <ng-include ng-if="classItem.subprops !== undefined" src="'app/view/partial/doc/classItem/params.html'"
+                        ng-init="classItem = {params: classItem.subprops}"></ng-include>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,6 @@
+<li class="tn" ng-repeat="module in modules | objectFilter: {'name': modulesSidebarFilterText} | orderBy:['name']">
+    <a class="ti ti-default" ng-href="#{{module.name | idEncode}}">
+        <i class="fa fa-cube moduleItemType"></i><span
+            ng-bind="module.name"></span>
+    </a>
+</li>

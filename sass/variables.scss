@@ -1,0 +1,33 @@
+/* Common
+   ========================================================================== */
+$brand-primary: #428bca;
+$brand-success: #5cb85c;
+$brand-info: #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger: #d9534f;
+
+/* Tree
+   ========================================================================== */
+$tree-default-color: #333;
+$tree-default-bg: #fff;
+$tree-default-border: #ccc;
+
+$tree-primary-color: #fff;
+$tree-primary-bg: $brand-primary;
+$tree-primary-border: darken($brand-primary, 5%);
+
+$tree-success-color: #fff;
+$tree-success-bg: $brand-success;
+$tree-success-border: darken($tree-success-bg, 5%);
+
+$tree-info-color: #fff;
+$tree-info-bg: $brand-info;
+$tree-info-border: darken($tree-info-bg, 5%);
+
+$tree-warning-color: #fff;
+$tree-warning-bg: $brand-warning;
+$tree-warning-border: darken($tree-warning-bg, 5%);
+
+$tree-danger-color: #fff;
+$tree-danger-bg: $brand-danger;
+$tree-danger-border: darken($tree-danger-bg, 5%);

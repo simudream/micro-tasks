@@ -1,0 +1,9 @@
+<li class="tn" ng-repeat="(className, class) in getClassesByModuleName(module.name) | orderBy:['name']">
+    <a class="ti ti-default" ng-href="#{{module.name | idEncode}}_{{className | idEncode}}"
+       ani-if="click" ani-do="addClass active" ani-to="#{{module.name | idEncode}}_{{className | idEncode}}">
+        <i class="fa fa-cube classItemType"></i><span ng-bind="className"></span>
+    </a>
+    <ul id="{{module.name}}_{{className}}_properties" class="tl" role="menu"
+        ng-include="'app/view/partial/sidebar/listing/classItemsListing.html'">
+    </ul>
+</li>

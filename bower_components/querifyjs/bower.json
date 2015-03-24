@@ -1,0 +1,29 @@
+{
+  "name": "querifyjs",
+  "version": "0.12.0",
+  "homepage": "https://github.com/pflannery/querifyjs",
+  "authors": [
+    "pflannery <pflannery@users.noreply.github.com>"
+  ],
+  "description": "Query library for JS",
+  "main": "./dist/querify.min.js",
+  "moduleType": [
+    "node",
+    "browser"
+  ],
+  "keywords": [
+    "query",
+    "no-sql",
+    "promise"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "*",
+    "!dist/*",
+    "!README.md",
+    "!LICENSE.md"
+  ],
+  "dependencies": {
+    "promise-extras": "1.3.1"
+  }
+}

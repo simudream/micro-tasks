@@ -1,0 +1,5 @@
+<li class="tn" ng-repeat="class in classes | objectFilter: {'name': classesSidebarFilterText} | orderBy:['name']">
+    <a class="ti ti-default" ng-href="#{{class.module | idEncode}}_{{class.name | idEncode}}" scroll-to>
+        <i class="fa fa-cube classItemType"></i><span ng-bind="class.name"></span>
+    </a>
+</li>

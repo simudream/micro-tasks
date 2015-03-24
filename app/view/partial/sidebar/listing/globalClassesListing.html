@@ -1,0 +1,12 @@
+<ul class="tl nav" role="menu">
+    <li ng-repeat="(className, class) in globalClasses | orderBy:['name']">
+        <a class="ti ti-default" ng-href="#{{className | idEncode}}" scroll-to>
+            <i class="fa fa-cube classItemType"></i><span
+                ng-bind="className"></span>
+        </a>
+        <ul id="{{className}}_properties" class="tl" role="menu"
+            ng-include="'app/view/partial/sidebar/listing/classItemsListing.html'"
+            ng-init="module = {}">
+        </ul>
+    </li>
+</ul>

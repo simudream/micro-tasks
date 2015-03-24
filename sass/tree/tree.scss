@@ -1,0 +1,57 @@
+.tree {
+
+  /* top level */
+  > .tree-list, > .tl {
+    position: relative;
+
+    > .tree-node, > .tn {
+      padding-left: 0em;
+    }
+
+  }
+
+  .tree-list, .tl {
+    line-height: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .tree-list.collapsing, .tl.collapsing {
+      position: static;
+    }
+
+  }
+
+}
+
+.tree-node, .tn {
+  display: block;
+  padding-left: 1em;
+}
+
+.tree-item, .ti {
+  cursor: pointer;
+  padding: .7em;
+  height: 2.4em;
+  vertical-align: top;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &:before {
+
+    content: '';
+    position: absolute;
+    height: inherit;
+    left: 0;
+    right: 0;
+    margin-top: -.7em;
+    z-index: -1;
+  }
+
+  > span {
+    vertical-align: top;
+  }
+
+}

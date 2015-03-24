@@ -1,0 +1,9 @@
+<div>
+    <input class="form-control" type="text" ng-model="allSidebarFilterText" placeholder="Filter class items">
+</div>
+<div class="nav sidebarNav">
+    <div class="tree">
+        <ul class="tl nav" role="menu" ng-include="'app/view/partial/sidebar/listing/modulesListing.html'" ng-if="modules!==undefined"></ul>
+        <ul class="tl nav" role="menu" ng-include="'app/view/partial/sidebar/listing/globalClassesListing.html'" ng-if="globalClasses!==undefined"></ul>
+    </div>
+</div>

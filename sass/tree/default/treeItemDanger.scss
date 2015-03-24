@@ -1,0 +1,28 @@
+.tree {
+
+  .tree-list, .tl {
+
+    .tree-item-danger, .ti-danger {
+
+      color: $tree-danger-color;
+
+      &:before {
+        background-color: $tree-danger-bg;
+        border-color: $tree-danger-border;
+      }
+
+      // highlights single item only
+      &:hover {
+
+        &:before {
+          background-color: darken($tree-danger-bg, 10%);
+          border-color: darken($tree-danger-border, 10%);
+        }
+
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,8 @@
+<li class="tn"
+    ng-repeat="classItem in classItems | filter:{itemtype: 'method'}:true | objectFilter: {'name': methodsSidebarFilterText} | orderBy:['itemtype', 'name']">
+    <a class="ti ti-default"
+       ng-href="#{{classItem.module | idEncode}}_{{classItem.class | idEncode}}_{{classItem.name | idEncode}}" scroll-to>
+        <i class="fa fa-cube methodItemType"></i><span
+            ng-bind="classItem.name"></span>
+    </a>
+</li>

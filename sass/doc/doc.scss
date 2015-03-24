@@ -1,0 +1,35 @@
+.docMain {
+  position: relative;
+  left: 20px;
+
+  .page-header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .fa {
+    padding-right: 5px;
+  }
+
+}
+
+.moduleItemType {
+  color: #856819;
+}
+
+.classItemType {
+  color: #FF840A;
+}
+
+.methodItemType {
+  color: #2B61B4;
+}
+
+.propertyItemType {
+  color: #DCC800;
+}
+
+
+.sidebarActive {
+  left: 320px;
+}

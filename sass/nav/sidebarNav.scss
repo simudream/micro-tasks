@@ -1,0 +1,75 @@
+.iconSidebar {
+  float: left;
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  background-color: #222;
+
+  .nav-pills {
+
+    .active a {
+      color: #222;
+      background-color: white;
+
+      &:hover {
+        color: #222 !important;
+        background-color: white !important;
+      }
+
+    }
+
+  }
+
+  .btn-pill {
+    padding: 0px;
+    border: 0px;
+    a {
+      border-radius: 0px;
+      color: white;
+
+      &:hover {
+        color: #222;
+        background-color: white;
+      }
+    }
+
+  }
+
+}
+
+.iconSidebar .fa {
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.popoverSidebar {
+  position: fixed;
+  z-index: 1000;
+  padding-top: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-right: 1px solid;
+  border-right-color: #EEE;
+  transition: initial;
+  height: 100%;
+  width: 300px;
+
+  .sidebarNav {
+    .fa {
+      padding-right: 5px;
+    }
+  }
+
+  .filterInput {
+    border: 1px solid #DFDFDF;
+    padding-left: 2px;
+    color: #444;
+  }
+}
+
+.main {
+  position: absolute;
+  top: 51px;
+  left: 70px;
+}

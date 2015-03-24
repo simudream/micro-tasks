@@ -1,0 +1,29 @@
+<div>
+    <div class="syntax">
+        <strong class="text-muted">Syntax</strong>
+
+        <div class="bs-callout markdown-body">
+            <code>
+                <span ng-bind="classItem.name"></span>(<span ng-repeat="param in classItem.params">
+                    <span ng-bind="param.name"></span><span ng-if="$index<classItem.params.length-1">, </span>
+                </span>);
+            </code>
+        </div>
+    </div>
+
+    <ng-include src="'app/view/partial/doc/classItem/params.html'"></ng-include>
+
+    <div class="returns" ng-if="classItem.return !== undefined">
+        <strong class="text-muted">Returns</strong>
+        <br/><br/>
+        <ul>
+            <li>
+                <a href="#" ng-bind="classItem.return.type"></a>
+                <div class="param-description">
+                    <p class="description markdown-body" ng-bind-html="marked(classItem.return.description)"/>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>

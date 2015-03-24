@@ -1,0 +1,45 @@
+.tree {
+
+  //    /* top level */
+  //    ul:first-child {
+  //      border: 1px solid $tree-default-border;
+  //      border-width: 0 1px 1px 1px;
+  //    }
+
+  .tree-list, .tl {
+
+    // highlights all up the tree
+    //
+    //      li {
+    //
+    //        &:hover > .ti-Default:before {
+    //          background-color: darken($tree-default-bg, 10%);
+    //          border-color: darken($tree-default-border, 10%);
+    //        }
+    //
+    //      }
+
+    .tree-item-default, .ti-default {
+
+      color: $tree-default-color;
+
+      &:before {
+        background-color: $tree-default-bg;
+        border-color: $tree-default-border;
+      }
+
+      // highlights single item only
+      &:hover {
+
+        &:before {
+          background-color: darken($tree-default-bg, 10%);
+          border-color: darken($tree-default-border, 10%);
+        }
+
+      }
+
+    }
+
+  }
+
+}

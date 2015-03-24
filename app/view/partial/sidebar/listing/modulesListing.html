@@ -1,0 +1,9 @@
+<li class="tn" ng-repeat="module in modules | orderBy:['name']">
+    <a class="ti ti-default" ng-href="#{{module.name | idEncode}}" data-anijs="if: click, do: $toggleClass active, to: #{{module.name | idEncode}}">
+        <i class="fa fa-cube moduleItemType"></i><span
+            ng-bind="module.name"></span>
+    </a>
+    <ul id="{{module.name}}_properties" class="tl" role="menu"
+        ng-include="'app/view/partial/sidebar/listing/classesListing.html'">
+    </ul>
+</li>
