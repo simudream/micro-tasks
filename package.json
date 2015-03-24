@@ -54,6 +54,7 @@
   "license": {
     "type": "GNU GPL v3"
   },
+  "main": "./out/micro-task-queue.js",
   "bundle": [
     "./src/micro-task-queue.js",
     "./src/monitored-task-queue.js",

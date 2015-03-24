@@ -25,6 +25,9 @@ describe("micro-task-queue", function() {
       taskWasCalled = true;
     });
 
+    // run the tasks
+    queue.run();
+
     // run a macro task
     setTimeout(function() {
       expect(taskWasCalled).to.equal(true);
@@ -47,6 +50,9 @@ describe("micro-task-queue", function() {
         tasksCalled++
       }
     ]);
+
+    // run the tasks
+    queue.run();
 
     // run a macro task
     setTimeout(function() {
@@ -73,6 +79,9 @@ describe("micro-task-queue", function() {
 
     expect(queue.taskCount).to.equal(3);
 
+    // run the tasks
+    queue.run();
+
     // run a macro task
     setTimeout(function() {
       expect(queue.taskCount).to.equal(0);
@@ -84,13 +93,16 @@ describe("micro-task-queue", function() {
     var doneWasCalled = false,
       taskWasCalled = false;
 
-    var queue = new MicroTaskQueue(null, function() {
+    var queue = new MicroTaskQueue(function() {
       doneWasCalled = true;
     });
 
     queue.addTask(function() {
       taskWasCalled = true;
     });
+
+    // run the tasks
+    queue.run();
 
     // run a macro task
     setTimeout(function() {
@@ -102,9 +114,12 @@ describe("micro-task-queue", function() {
 
   it("done handler is not called when tasks are not present", function(done) {
     var doneWasCalled = false;
-    var queue = new MicroTaskQueue(null, function() {
+    var queue = new MicroTaskQueue(function() {
       doneWasCalled = true;
     });
+
+    // run the tasks
+    queue.run();
 
     // run a macro task
     setTimeout(function() {
@@ -114,11 +129,14 @@ describe("micro-task-queue", function() {
   });
 
   it("done handler passes an error when an error has occurred in a task", function(done) {
-    var queue = new MicroTaskQueue(null, function(result) {
+    var queue = new MicroTaskQueue(function(result) {
       // caught error
       expect(result instanceof ReferenceError).to.equal(true);
       done();
     });
+
+    // run the tasks
+    queue.run();
 
     queue.addTask(function() {
       throw new ReferenceError();
@@ -126,13 +144,16 @@ describe("micro-task-queue", function() {
   });
 
   it("done handler receives accumulated data", function(done) {
-    var queue = new MicroTaskQueue(0);
+    var queue = new MicroTaskQueue();
 
     for (var i = 0; i < 100; i++) {
       queue.addTask(function(data) {
         return data + 1;
       });
     }
+
+    // run the tasks
+    queue.run(0);
 
     queue.done(function(data){
       expect(data).to.equal(100);

@@ -18,7 +18,7 @@ describe("monitored-task-queue", function () {
   });
 
   it("beforeEach, taskDone, and AfterEach handlers are called when running a single task", function (done) {
-    var queue = new MonitoredTaskQueue(0),
+    var queue = new MonitoredTaskQueue(),
       order = [];
 
     queue.beforeEach(function (data) {
@@ -44,10 +44,14 @@ describe("monitored-task-queue", function () {
         expect(order[3]).to.equal("afterEach");
         done();
       });
+
+    // run the tasks
+    queue.run(0);
+
   });
 
   it("beforeEach, taskDone, and AfterEach handlers is called when running multiple tasks", function (done) {
-    var queue = new MonitoredTaskQueue(0),
+    var queue = new MonitoredTaskQueue(),
       order = [];
 
     queue.beforeEach(function (data) {
@@ -95,6 +99,9 @@ describe("monitored-task-queue", function () {
         done();
       });
 
+    // run the tasks
+    queue.run(0);
+
   });
 
   it("afterEach handler is called when tasks are present", function (done) {
@@ -116,6 +123,9 @@ describe("monitored-task-queue", function () {
         //tasksCalled++
       }
     ]);
+
+    // run the tasks
+    queue.run();
 
     // run a macro task
     setTimeout(function () {

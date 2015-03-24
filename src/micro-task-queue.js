@@ -34,11 +34,16 @@ function wrapMicroTask(queue, taskHandler) {
  * @param {Function} doneHandler
  *      called when all tasks have been completed
  */
-function MicroTaskQueue(data, doneHandler) {
+function MicroTaskQueue(doneHandler) {
   this.taskCount = 0;
   if (doneHandler)
     this.done(doneHandler);
-  this.promise = Promise.resolve(data);
+
+  var this_ = this;
+  this.promise = new Promise(function(resolve) {
+    // runs the then chain when called
+    this_.run = resolve;
+  });
 }
 
 MicroTaskQueue.prototype = {
