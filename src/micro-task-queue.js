@@ -41,7 +41,12 @@ function MicroTaskQueue(doneHandler) {
 
   var this_ = this;
   this.promise = new Promise(function(resolve) {
-    // runs the then chain when called
+    /**
+     * Runs all queued tasks
+     *
+     * @method run
+     * @param {Variable} data
+      */
     this_.run = resolve;
   });
 }
