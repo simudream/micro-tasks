@@ -1,18 +1,18 @@
 
 <!-- TITLE/ -->
 
-# Micro Task Queue
+# Micro Tasking Library
 
 <!-- /TITLE -->
 
 
 <!-- BADGES/ -->
 
-[![Build Status](https://img.shields.io/travis/pflannery/micro-task-queue/master.svg)](http://travis-ci.org/pflannery/micro-task-queue "Check this project's build status on TravisCI")
-[![NPM version](https://img.shields.io/npm/v/micro-task-queue.svg)](https://npmjs.org/package/micro-task-queue "View this project on NPM")
-[![NPM downloads](https://img.shields.io/npm/dm/micro-task-queue.svg)](https://npmjs.org/package/micro-task-queue "View this project on NPM")
-[![Dependency Status](https://img.shields.io/david/pflannery/micro-task-queue.svg)](https://david-dm.org/pflannery/micro-task-queue)
-[![Dev Dependency Status](https://img.shields.io/david/dev/pflannery/micro-task-queue.svg)](https://david-dm.org/pflannery/micro-task-queue#info=devDependencies)<br/>
+[![Build Status](https://img.shields.io/travis/pflannery/micro-tasks/master.svg)](http://travis-ci.org/pflannery/micro-tasks "Check this project's build status on TravisCI")
+[![NPM version](https://img.shields.io/npm/v/micro-tasks.svg)](https://npmjs.org/package/micro-tasks "View this project on NPM")
+[![NPM downloads](https://img.shields.io/npm/dm/micro-tasks.svg)](https://npmjs.org/package/micro-tasks "View this project on NPM")
+[![Dependency Status](https://img.shields.io/david/pflannery/micro-tasks.svg)](https://david-dm.org/pflannery/micro-tasks)
+[![Dev Dependency Status](https://img.shields.io/david/dev/pflannery/micro-tasks.svg)](https://david-dm.org/pflannery/micro-tasks#info=devDependencies)<br/>
 [![Gratipay donate button](https://img.shields.io/gratipay/pflannery.svg)](https://www.gratipay.com/pflannery/ "Donate weekly to this project using Gratipay")
 
 <!-- /BADGES -->
@@ -30,12 +30,12 @@ Simple task utility that runs tasks as micro tasks via promises.
 ## Install
 
 ### [NPM](http://npmjs.org/)
-- Use: `require('micro-task-queue')`
-- Install: `npm install --save micro-task-queue`
+- Use: `require('micro-tasks')`
+- Install: `npm install --save micro-tasks`
 
 ### [Bower](http://bower.io/)
-- Use: `require('micro-task-queue')`
-- Install: `bower install micro-task-queue`
+- Use: `require('micro-tasks')`
+- Install: `bower install micro-tasks`
 
 <!-- /INSTALL -->
 
@@ -195,11 +195,8 @@ No sponsors yet! Will you be the first?
 
 ### Contributors
 
-These amazing people have contributed code to this project:
-
-- [pflannery](https://github.com/pflannery) — [view contributions](https://github.com/pflannery/micro-task-queue/commits?author=pflannery)
-
-[Become a contributor!](https://github.com/pflannery/micro-task-queue/blob/master/CONTRIBUTING.md#files)
+No contributors yet! Will you be the first?
+[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pflannery/micro-tasks/blob/master/CONTRIBUTING.md#files)
 
 <!-- /BACKERS -->
 
@@ -213,5 +210,6 @@ Licensed under GNU GPL v3
 Copyright &copy; 2015+ pflannery (https://github.com/pflannery)
 
 <!-- /LICENSE -->
+
 
 [![Analytics](https://ga-beacon.appspot.com/UA-47157500-1/micro-task-queue/readme)](https://github.com/pflannery/micro-task-queue)

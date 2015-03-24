@@ -1,13 +1,14 @@
 {
-  "name": "micro-task-queue",
+  "name": "micro-tasks",
   "version": "0.0.0",
   "license": "GNU GPL v3",
   "description": "Simple task utility that runs tasks as micro tasks via promises.",
   "keywords": [
     "micro task",
-    " tasks",
-    " promise"
+    "tasks",
+    "promise"
   ],
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "main": "./out/micro-tasks.js"
 }

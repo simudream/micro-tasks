@@ -1,5 +1,5 @@
 {
-  "name": "micro-task-queue",
+  "name": "micro-tasks",
   "description": "Simple task utility that runs tasks as micro tasks via promises.",
   "version": "0.0.0",
   "engines": {
@@ -8,18 +8,16 @@
   },
   "keywords": [
     "micro task",
-    " tasks",
-    " promise"
+    "tasks",
+    "promise"
   ],
   "author": "2015+ pflannery (https://github.com/pflannery)",
   "maintainers": [
     "pflannery (https://github.com/pflannery)"
   ],
-  "contributors": [
-    "pflannery (https://github.com/pflannery)"
-  ],
+  "contributors": [],
   "bugs": {
-    "url": "https://github.com/pflannery/micro-task-queue/issues"
+    "url": "https://github.com/pflannery/micro-tasks/issues"
   },
   "scripts": {
     "install-deps": "grunt shell:projectz && bower install"
@@ -54,11 +52,11 @@
   "license": {
     "type": "GNU GPL v3"
   },
-  "main": "./out/micro-task-queue.js",
+  "main": "./out/micro-tasks.js",
   "bundle": [
     "./src/micro-task-errors.js",
     "./src/micro-task-queue.js",
     "./src/monitored-task-queue.js",
-    "./src/global.js"
+    "./src/micro-tasks.js"
   ]
 }

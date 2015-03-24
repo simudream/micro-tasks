@@ -1,28 +1,28 @@
 {
 # Project's human readable name
-title: "Micro Task Queue"
+title: "Micro Tasking Library"
 
 # Project slug name
-name: "micro-task-queue"
+name: "micro-tasks"
 
 # Project GitHub repository full name
 # If `repository` is set, or if `homepage` is a GitHub URL, we set this automatically
-repo: "pflannery/micro-task-queue"
+repo: "pflannery/micro-tasks"
 
 # Project's homepage URL
 # If `repo`, `repository`, or `demo` is set, we set this automatically
-homepage: "https://github.com/pflannery/micro-task-queue"
+homepage: "https://github.com/pflannery/micro-tasks"
 
 # Project's demo URL
 # If `homepage` or  is set, we set this automatically
-demo: "https://pflannery.github.com/micro-task-queue"
+demo: "https://pflannery.github.com/micro-tasks"
 
 # Project description
 description: "Simple task utility that runs tasks as micro tasks via promises."
 
 # Project keywords
 # Can be an array or CSV string
-keywords: "micro task, tasks, promise"
+keywords: "micro task,tasks,promise"
 
 # Project's author details
 # Can be an array or CSV string
@@ -51,12 +51,12 @@ licenses: null
 # If `repo` is set, or if `homepage` is a GitHub URL, we set this automatically
 repository:
 	type: "git"
-	url: "https://github.com/pflannery/micro-task-queue.git"
+	url: "https://github.com/pflannery/micro-tasks.git"
 
 # Project's repository details
 # If `repo` is set, or if `homepage` is a GitHub URL, we set this automatically
 bugs:
-	url: "https://github.com/pflannery/micro-task-queue/issues"
+	url: "https://github.com/pflannery/micro-tasks/issues"
 
 # Whether the project can run on the client-side in web browsers
 # If the component or bower package information is set, then this becomes true automatically
