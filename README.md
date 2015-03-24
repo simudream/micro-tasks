@@ -72,7 +72,7 @@ Simple task utility that runs tasks as micro tasks via promises.
 ```js
   // creates a MicroTaskQueue, then passes in some optional data
   var data = 1,
-    queue = new MicroTaskQueue(data);
+    queue = new MicroTaskQueue();
 
   // adds a batch of micro tasks
   queue.addTasks([
@@ -96,13 +96,15 @@ Simple task utility that runs tasks as micro tasks via promises.
     else
       console.log("complete " + result);
   });
+
+  queue.run(data);
 ```
 
 ####Monitoring single tasks
 ```js
 // create a MonitoredTaskQueue, this example passes in some optional data
 var data = 0;
-var queue = new MonitoredTaskQueue(data);
+var queue = new MonitoredTaskQueue();
 
 // the following functions are added in no specific order
 
@@ -127,12 +129,15 @@ queue.beforeEach(function (data) {
   else
     console.log("complete " + result);
 });
+
+queue.run(data);
 ```
 
 ####Monitoring task batches
 ```js
+  var data = 0;
   // create a MonitoredTaskQueue, this example passes in some optional data
-  var queue = new MonitoredTaskQueue(0);
+  var queue = new MonitoredTaskQueue();
 
   // the following functions are added in no specific order
 
@@ -166,6 +171,8 @@ queue.beforeEach(function (data) {
     else
       console.log("complete " + result);
   });
+
+  queue.run(data);
 ```
 
 <!-- BACKERS/ -->
@@ -204,6 +211,5 @@ Licensed under GNU GPL v3
 Copyright &copy; 2015+ pflannery (https://github.com/pflannery)
 
 <!-- /LICENSE -->
-
 
 [![Analytics](https://ga-beacon.appspot.com/UA-47157500-1/micro-task-queue/readme)](https://github.com/pflannery/micro-task-queue)

@@ -66,7 +66,7 @@ MicroTaskQueue.prototype = {
    *
    * ```javascript
    *  var data = 1;
-   *  var queue = new MicroTaskQueue(data);
+   *  var queue = new MicroTaskQueue();
    *
    *  queue.addTask(function(data){
    *    console.log("task " + data);
@@ -75,6 +75,8 @@ MicroTaskQueue.prototype = {
    *    console.log("task " + data);
    *    return data + 1;
    *  });
+   *
+   *  queue.run(data);
    * ```
    */
   addTask: function(taskHandler) {
@@ -97,7 +99,7 @@ MicroTaskQueue.prototype = {
    *
    * ```javascript
    *  var data = 1;
-   *  var queue = new MicroTaskQueue(data);
+   *  var queue = new MicroTaskQueue();
    *
    *  queue.addTask([
    *    function(data){
@@ -113,6 +115,8 @@ MicroTaskQueue.prototype = {
    *      return data + 1;
    *    }
    *  ]);
+   *
+   *  queue.run(data);
    * ```
    */
   addTasks: function(taskBatchHandlers) {
