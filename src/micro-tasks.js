@@ -1,4 +1,5 @@
 var library = {
+  MicroTaskBreak: MicroTaskBreak,
   MicroTaskQueue: MicroTaskQueue,
   MonitoredTaskQueue: MonitoredTaskQueue
 };

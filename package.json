@@ -15,7 +15,9 @@
   "maintainers": [
     "pflannery (https://github.com/pflannery)"
   ],
-  "contributors": [],
+  "contributors": [
+    "pflannery (https://github.com/pflannery)"
+  ],
   "bugs": {
     "url": "https://github.com/pflannery/micro-tasks/issues"
   },

@@ -42,7 +42,7 @@ Simple task utility that runs tasks as micro tasks via promises.
 
 ## Documentation
 
-[Library API](http://pflannery.github.io/micro-task-queue/)
+[Library API](http://pflannery.github.io/micro-tasks/)
 
 ## Usage
 
@@ -195,8 +195,11 @@ No sponsors yet! Will you be the first?
 
 ### Contributors
 
-No contributors yet! Will you be the first?
-[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/pflannery/micro-tasks/blob/master/CONTRIBUTING.md#files)
+These amazing people have contributed code to this project:
+
+- [pflannery](https://github.com/pflannery) — [view contributions](https://github.com/pflannery/micro-tasks/commits?author=pflannery)
+
+[Become a contributor!](https://github.com/pflannery/micro-tasks/blob/master/CONTRIBUTING.md#files)
 
 <!-- /BACKERS -->
 

@@ -31,7 +31,6 @@ module.exports = {
     "compile",
     "copy:outToDist",
     "uglify:compress",
-    "uglify:compressWithDeps",
     "yuidoc:generateJSON"
   ],
 

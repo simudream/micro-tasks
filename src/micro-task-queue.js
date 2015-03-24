@@ -1,5 +1,5 @@
 /**
- * @module MicroTasking
+ * @module MicroTasks
  */
 "use strict";
 
