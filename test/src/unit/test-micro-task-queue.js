@@ -6,8 +6,8 @@ var chai = chai, expect = expect;
 if (!MicroTaskQueue && require) {
 	chai = require("chai");
 	expect = chai.expect;
-  MicroTaskBreak = require("../../../out/micro-task-queue").MicroTaskBreak;
-  MicroTaskQueue = require("../../../out/micro-task-queue").MicroTaskQueue;
+  MicroTaskBreak = require("../../../out/micro-tasks").MicroTaskBreak;
+  MicroTaskQueue = require("../../../out/micro-tasks").MicroTaskQueue;
 }
 
 describe("micro-task-queue", function() {

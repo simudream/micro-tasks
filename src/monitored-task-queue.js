@@ -7,7 +7,6 @@
  * @class MonitoredTaskQueue
  *
  * @constructor
- * @param data Custom data that will be passed to the first task
  * @param {Function} doneHandler
  *      called when all tasks have been completed
  */

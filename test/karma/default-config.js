@@ -26,7 +26,7 @@ module.exports = function (config) {
     //    dir: 'karma/coverage/'
     //},
     files: [
-      '../out/micro-task-queue.js',
+      '../out/micro-tasks.js',
       'src/unit/*.js'
     ],
     browsers: ['Chrome'],

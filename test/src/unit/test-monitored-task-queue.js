@@ -5,7 +5,7 @@ var chai = chai, expect = expect;
 if (!MonitoredTaskQueue && require) {
   chai = require("chai");
   expect = chai.expect;
-  MonitoredTaskQueue = require("../../../out/micro-task-queue").MonitoredTaskQueue;
+  MonitoredTaskQueue = require("../../../out/micro-tasks").MonitoredTaskQueue;
 }
 
 describe("monitored-task-queue", function () {
