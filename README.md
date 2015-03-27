@@ -20,7 +20,7 @@
 
 <!-- DESCRIPTION/ -->
 
-Simple task utility that runs tasks as micro tasks via promises.
+Experimental: Simple task utility that runs tasks as micro tasks via promises.
 
 <!-- /DESCRIPTION -->
 
