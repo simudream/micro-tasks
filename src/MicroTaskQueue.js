@@ -1,7 +1,7 @@
 /**
  * @module MicroTasks
  */
-"use strict";
+import {MicroTaskBreak} from './MicroTaskErrors.js';
 
 function wrapMicroTask(queue, taskHandler) {
   return function(data) {
@@ -28,30 +28,33 @@ function wrapMicroTask(queue, taskHandler) {
  * Class for creating tasks that are run as micro tasks using Promises.
  *
  * @class MicroTaskQueue
- *
- * @constructor
- * @param data Custom data that will be passed to the first task
- * @param {Function} doneHandler
- *      called when all tasks have been completed
  */
-function MicroTaskQueue(doneHandler) {
-  this.taskCount = 0;
-  if (doneHandler)
-    this.done(doneHandler);
+export class MicroTaskQueue {
 
-  var this_ = this;
-  this.promise = new Promise(function(resolve) {
-    /**
-     * Runs all queued tasks
-     *
-     * @method run
-     * @param {Variable} data
-      */
-    this_.run = resolve;
-  });
-}
+  /**
+   * @constructor
+   * @param data Custom data that will be passed to the first task
+   * @param {Function} doneHandler
+   *      called when all tasks have been completed
+   * @param doneHandler
+   */
+  constructor(doneHandler) {
+    this.taskCount = 0;
+    if (doneHandler)
+      this.done(doneHandler);
 
-MicroTaskQueue.prototype = {
+    var this_ = this;
+    this.promise = new Promise(function(resolve) {
+      /**
+       * Runs all queued tasks
+       *
+       * @method run
+       * @param {Variable} data
+       */
+      this_.run = resolve;
+    });
+  }
+
   /**
    * Adds a task function to the queue which will be called during the next micro task cycle
    *
@@ -79,11 +82,11 @@ MicroTaskQueue.prototype = {
    *  queue.run(data);
    * ```
    */
-  addTask: function(taskHandler) {
+  addTask(taskHandler) {
     this.promise = this.promise.then(wrapMicroTask(this, taskHandler));
     this.taskCount++;
     return this;
-  },
+  }
 
   /**
    * Adds an array of task functions to the queue which wi;; be called during the next micro task cycle
@@ -119,14 +122,14 @@ MicroTaskQueue.prototype = {
    *  queue.run(data);
    * ```
    */
-  addTasks: function(taskBatchHandlers) {
+  addTasks(taskBatchHandlers) {
     var index = 0, count = taskBatchHandlers.length;
     for (; index < count; index++)
       this.promise = this.promise.then(wrapMicroTask(this, taskBatchHandlers[index]));
 
     this.taskCount += count;
     return this;
-  },
+  }
 
   /**
    * An event that is called when all tasks have been done
@@ -135,16 +138,16 @@ MicroTaskQueue.prototype = {
    * @param {Function} doneHandler
    *    @param result An Error if an error occurred during a task otherwise its any data that was passed from the last task ran
    */
-  done: function(doneHandler) {
+  done(doneHandler) {
     this.doneHandler = doneHandler;
-  },
+  }
 
   /**
    * @method break
    * @param {Variable} reason
    */
-  break: function(reason) {
+  break(reason) {
     throw new MicroTaskBreak(reason);
   }
 
-};
+}

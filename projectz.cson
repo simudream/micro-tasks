@@ -18,7 +18,7 @@ homepage: "https://github.com/pflannery/micro-tasks"
 demo: "https://pflannery.github.com/micro-tasks"
 
 # Project description
-description: "Simple task utility that runs tasks as micro tasks via promises."
+description: "Experimental: Simple task utility that runs tasks as micro tasks via promises."
 
 # Project keywords
 # Can be an array or CSV string

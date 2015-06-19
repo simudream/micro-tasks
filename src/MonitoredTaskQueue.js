@@ -1,50 +1,47 @@
-"use strict";
+import {MicroTaskQueue} from './MicroTaskQueue.js';
 
 /**
  * Class that provides beforeEach, afterEach, taskDone and taskBatchDone handlers to assist
  * with scenarios like monitoring progress of micro tasks.
  *
  * @class MonitoredTaskQueue
- *
- * @constructor
- * @param {Function} doneHandler
- *      called when all tasks have been completed
  */
-function MonitoredTaskQueue(doneHandler) {
-  MicroTaskQueue.call(this, doneHandler);
-}
+export class MonitoredTaskQueue extends MicroTaskQueue {
 
-MonitoredTaskQueue.prototype = {
+  /**
+   * @constructor
+   * @param {Function} doneHandler
+   *      called when all tasks have been completed
+   */
+  constructor(doneHandler) {
+    super(doneHandler);
+  }
 
-  superAddTask: MicroTaskQueue.prototype.addTask,
-
-  done: MicroTaskQueue.prototype.done,
-
-  addTask: function (taskHandler, taskDoneHandler) {
+  addTask(taskHandler, taskDoneHandler) {
     if (this.beforeEachHandler)
-      this.superAddTask(this.beforeEachHandler);
+      super.addTask(this.beforeEachHandler);
 
-    this.superAddTask(taskHandler);
+    super.addTask(taskHandler);
 
     if (taskDoneHandler)
-      this.superAddTask(taskDoneHandler);
+      super.addTask(taskDoneHandler);
 
     if (this.afterEachHandler)
-      this.superAddTask(this.afterEachHandler);
+      super.addTask(this.afterEachHandler);
 
     return this;
-  },
+  }
 
-  addTasks: function (taskBatchHandlers, taskBatchDoneHandler) {
+  addTasks(taskBatchHandlers, taskBatchDoneHandler) {
     var index = 0, count = taskBatchHandlers.length;
     for (; index < count; index++)
       this.addTask(taskBatchHandlers[index]);
 
     if (taskBatchDoneHandler)
-      this.superAddTask(taskBatchDoneHandler);
-    
+      super.addTask(taskBatchDoneHandler);
+
     return this;
-  },
+  }
 
   /**
    * @method beforeEach
@@ -53,10 +50,10 @@ MonitoredTaskQueue.prototype = {
    * @param {Function} beforeEachHandler The method to be called before running a task
    * @return current {MicroTaskQueue} instance
    */
-  beforeEach: function (beforeEachHandler) {
+  beforeEach(beforeEachHandler) {
     this.beforeEachHandler = beforeEachHandler;
     return this;
-  },
+  }
 
   /**
    * @method afterEach
@@ -65,9 +62,14 @@ MonitoredTaskQueue.prototype = {
    * @param {Function} afterEachHandler The method to be called before running a task
    * @return current {MicroTaskQueue} instance
    */
-  afterEach: function (afterEachHandler) {
+  afterEach(afterEachHandler) {
     this.afterEachHandler = afterEachHandler;
     return this;
   }
 
-};
+}
+
+
+//[superAddTask] = MicroTaskQueue.prototype.addTask
+
+//{done} = MicroTaskQueue.prototype.done
